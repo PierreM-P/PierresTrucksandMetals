@@ -3,141 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titan Commercial & Architectural Engineering Solutions</title>
+    <title>Peter's Heavy Commercial Truck Bodies & Custom Fabrications</title>
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --accent-orange: #f97316;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
+            --primary-dark: #111827;
+            --secondary-dark: #1f2937;
+            --accent-gold: #d97706;
+            --accent-green: #25d366;
+            --text-main: #f9fafb;
+            --text-sub: #9ca3af;
+            --card-bg: #111827;
+            --border-color: #374151;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            background-color: var(--primary-dark);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
+        /* Top Bar & Header */
+        .top-bar {
+            background-color: #000000;
+            color: var(--text-sub);
+            padding: 0.5rem 2rem;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
         header {
-            background-color: rgba(15, 23, 42, 0.95);
+            background-color: var(--secondary-dark);
             padding: 1.25rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.4rem;
+        /* Logo Branding Area */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
             font-weight: 800;
-            letter-spacing: 1px;
-            color: var(--text-light);
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            text-transform: uppercase;
         }
 
-        .logo span {
-            color: var(--accent-orange);
+        .logo-text span {
+            color: var(--accent-gold);
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
         }
 
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .wa-btn {
+            background-color: var(--accent-green);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Banner */
         .hero {
-            padding: 4rem 2rem;
+            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.95)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 2rem;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            color: var(--text-main);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero p {
-            color: var(--text-muted);
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
+            color: var(--text-sub);
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
         }
 
-        .cta-btn {
-            background-color: var(--accent-orange);
-            color: #fff;
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: #ffffff;
             padding: 0.85rem 1.75rem;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 700;
-            display: inline-block;
-            transition: opacity 0.2s ease;
         }
 
-        .cta-btn:hover {
-            opacity: 0.9;
-        }
-
-        .catalog-section {
+        /* Main Content Layout */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 1.5rem;
         }
 
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--accent-orange);
-            padding-left: 0.75rem;
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
             margin-bottom: 4rem;
         }
 
         .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
+            background-color: var(--secondary-dark);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            height: 100%;
         }
 
-        .card h3 {
-            font-size: 1.3rem;
+        .card-title {
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
         }
 
-        .card .price {
-            font-size: 1.4rem;
+        .card-price {
+            font-size: 1.35rem;
             font-weight: 700;
-            color: var(--accent-orange);
+            color: var(--accent-gold);
             margin: 1rem 0;
         }
 
-        .card p {
-            color: var(--text-muted);
+        .card-desc {
+            color: var(--text-sub);
             font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
-        .quote-form-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
+        /* Form Section */
+        .quote-container {
+            background-color: var(--secondary-dark);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 2.5rem;
-            max-width: 700px;
-            margin: 2rem auto 4rem auto;
+            max-width: 750px;
+            margin: 0 auto;
         }
 
         .form-group {
@@ -148,22 +225,23 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 0.75rem;
             border-radius: 6px;
-            border: 1px solid var(--border);
-            background-color: var(--bg-dark);
-            color: var(--text-light);
+            border: 1px solid var(--border-color);
+            background-color: var(--primary-dark);
+            color: var(--text-main);
             font-size: 1rem;
         }
 
         .submit-btn {
             width: 100%;
             padding: 0.85rem;
-            background-color: var(--accent-orange);
+            background-color: var(--accent-gold);
             color: white;
             border: none;
             border-radius: 6px;
@@ -173,133 +251,187 @@
         }
 
         footer {
+            background-color: #000000;
             text-align: center;
             padding: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-sub);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <div class="top-bar">
+        <div>📍 Serving South Africa | Custom Engineering Solutions</div>
+        <div>📞 Sales & Inquiries: +27 63 135 6872</div>
+    </div>
+
     <header>
-        <div class="logo">TITAN <span>ENGINEERING</span></div>
-        <a href="#quote" class="cta-btn">Request Estimate</a>
+        <div class="brand-container">
+            <!-- Replace 'logo.png' with your image path once uploaded to GitHub repo -->
+            <img src="logo.png" alt="Peter's Engineering Logo" class="brand-logo" onerror="this.style.display='none'">
+            <div class="logo-text">
+                Peter's Commercial
+                <span>Truck Bodies & Custom Fabrications</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <a href="https://wa.me/27631356872?text=Hi%20Peter,%20I%20am%20interested%20in%20a%20custom%20build/quote." target="_blank" class="wa-btn">
+                💬 WhatsApp Us
+            </a>
+        </div>
     </header>
 
     <section class="hero">
-        <h1>Heavy Commercial Truck Bodies & Custom Fabrications</h1>
-        <p>Engineered rollbacks, tipper bodies, and high-security architectural steel solutions built to custom vehicle chassis and structural specifications.</p>
-        <a href="#catalog" class="cta-btn">Explore Catalog</a>
+        <h1>Custom Truck Body Building & Specialized Steel Fabrications</h1>
+        <p>Your trusted commercial partner for rollbacks, tipper bodies, heavy wreckers, and modern architectural steel gates & security solutions.</p>
+        <div class="cta-group">
+            <a href="#catalog" class="btn-primary">View Equipment Catalog</a>
+            <a href="https://wa.me/27631356872?text=Hi%20Peter,%20I'm%20looking%20for%20a%20quote%20on%20a%20truck%20body/steelwork." target="_blank" class="wa-btn">Instant WhatsApp Quote</a>
+        </div>
     </section>
 
-    <main class="catalog-section" id="catalog">
-        <h2 class="section-title">Commercial Truck Conversions</h2>
+    <main class="container" id="catalog">
+        
+        <div class="section-header">
+            <h2>Heavy Commercial Truck Bodies</h2>
+            <p>Built to chassis specification using heavy-gauge industrial standards.</p>
+        </div>
+
         <div class="grid">
             <div class="card">
-                <div>
-                    <h3>16 Ton Heavy Rollback Body</h3>
-                    <p>Heavy-duty hydraulic rollback platform designed for severe-duty breakdown recovery and heavy plant transportation.</p>
-                </div>
-                <div>
-                    <div class="price">R 295,000.00 <span style="font-size:0.8rem; color:var(--text-muted); font-weight:normal;">excl. VAT</span></div>
-                    <a href="#quote" class="cta-btn" style="width: 100%; text-align: center;">Request Spec Sheet</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>5 Ton Medium Rollback Body</h3>
-                    <p>Precision-engineered rollback carrier deck ideal for vehicle recovery fleets, machinery transport, and logistics.</p>
-                </div>
-                <div>
-                    <div class="price">R 195,000.00 <span style="font-size:0.8rem; color:var(--text-muted); font-weight:normal;">excl. VAT</span></div>
-                    <a href="#quote" class="cta-btn" style="width: 100%; text-align: center;">Request Spec Sheet</a>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">16 Ton Rollback Body</h3>
+                        <p class="card-desc">Heavy-duty hydraulic rollback platform designed for plant machinery and breakdown recovery fleets.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">R 295,000.00 <span style="font-size:0.75rem; color:var(--text-sub);">excl. VAT</span></div>
+                        <a href="https://wa.me/27631356872?text=Hi%20Peter,%20I%20need%20a%20quote%20for%20a%2016%20Ton%20Rollback." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <div>
-                    <h3>10 Cube Heavy Tipper Body</h3>
-                    <p>Reinforced high-tensile steel tipping body designed for high-capacity aggregate, sand, and mining applications.</p>
-                </div>
-                <div>
-                    <div class="price">R 195,000.00 <span style="font-size:0.8rem; color:var(--text-muted); font-weight:normal;">excl. VAT</span></div>
-                    <a href="#quote" class="cta-btn" style="width: 100%; text-align: center;">Request Spec Sheet</a>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">5 Ton Rollback Body</h3>
+                        <p class="card-desc">Precision rollback deck built for efficient vehicle towing, breakdown response, and light plant haulage.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">R 195,000.00 <span style="font-size:0.75rem; color:var(--text-sub);">excl. VAT</span></div>
+                        <a href="https://wa.me/27631356872?text=Hi%20Peter,%20I%20need%20a%20quote%20for%20a%205%20Ton%20Rollback." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <div>
-                    <h3>Heavy Duty Wrecker / Tow Truck</h3>
-                    <p>Custom heavy wrecker fitment engineered for commercial vehicle extraction and heavy-duty towing.</p>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">10 Cube Tipper Body</h3>
+                        <p class="card-desc">Reinforced steel tipping body engineered for aggregate, earthmoving, civil, and mining contractors.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">R 195,000.00 <span style="font-size:0.75rem; color:var(--text-sub);">excl. VAT</span></div>
+                        <a href="https://wa.me/27631356872?text=Hi%20Peter,%20I%20need%20a%20quote%20for%20a%2010%20Cube%20Tipper." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
                 </div>
-                <div>
-                    <div class="price">R 850,000.00 <span style="font-size:0.8rem; color:var(--text-muted); font-weight:normal;">excl. VAT</span></div>
-                    <a href="#quote" class="cta-btn" style="width: 100%; text-align: center;">Request Spec Sheet</a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Heavy Duty Wrecker / Tow Truck</h3>
+                        <p class="card-desc">Severe-duty recovery wrecker fitments custom fabricated for commercial recovery operators.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">R 850,000.00 <span style="font-size:0.75rem; color:var(--text-sub);">excl. VAT</span></div>
+                        <a href="https://wa.me/27631356872?text=Hi%20Peter,%20I%20need%20a%20quote%20for%20a%20Heavy%20Duty%20Wrecker." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title">Architectural Steel & Perimeter Security</h2>
+        <div class="section-header">
+            <h2>Architectural Steel & Perimeter Security</h2>
+            <p>Custom motorized gates, burglar proofing, and residential steel fabrications.</p>
+        </div>
+
         <div class="grid">
             <div class="card">
-                <div>
-                    <h3>Custom Motorised Driveway Gates</h3>
-                    <p>High-end slatted, laser-cut, or modern steel & aluminium security gates designed for residential and industrial properties.</p>
-                </div>
-                <div>
-                    <div class="price">Custom Quote</div>
-                    <a href="#quote" class="cta-btn" style="width: 100%; text-align: center;">Book Consultation</a>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Custom Slatted & Laser-Cut Driveway Gates</h3>
+                        <p class="card-desc">Modern automated security gates tailored to fit residential, estate, or industrial access points.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">Custom Quote</div>
+                        <a href="https://wa.me/27631356872?text=Hi%20Peter,%20I%20would%20like%20a%20quote%20on%20a%20Custom%20Driveway%20Gate." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <div>
-                    <h3>High-Security Perimeter & Burglar Protection</h3>
-                    <p>Architectural burglar bars, safety enclosures, steel doors, and modern perimeter balustrades.</p>
-                </div>
-                <div>
-                    <div class="price">Custom Quote</div>
-                    <a href="#quote" class="cta-btn" style="width: 100%; text-align: center;">Book Consultation</a>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Burglar Proofing & Security Doors</h3>
+                        <p class="card-desc">High-strength burglar bars, steel enclosure gates, pedestrian access doors, and steel balustrades.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">Custom Quote</div>
+                        <a href="https://wa.me/27631356872?text=Hi%20Peter,%20I%20would%20like%20a%20quote%20on%20Burglar%20Proofing/Steel%20Doors." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <section class="quote-form-section" id="quote">
-            <h2 style="margin-bottom: 1.5rem; text-align: center;">Request a Formal Quote / Consultation</h2>
+        <!-- Request Form Section -->
+        <div class="quote-container" id="quote">
+            <h2 style="text-align: center; margin-bottom: 1rem;">Request a Written Estimate</h2>
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-group">
-                    <label for="name">Full Name / Company Name</label>
-                    <input type="text" id="name" name="name" required placeholder="e.g. John Smith (ABC Logistics)">
+                    <label for="name">Company / Client Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name or Company Name">
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone / WhatsApp Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="e.g. 082 123 4567">
+                    <input type="tel" id="phone" name="phone" required placeholder="063 135 6872">
                 </div>
                 <div class="form-group">
-                    <label for="service">Required Build / Fitting</label>
-                    <select id="service" name="service" required>
+                    <label for="service">Requested Build or Product</label>
+                    <select id="service" name="service">
                         <option value="16 Ton Rollback">16 Ton Rollback Body</option>
                         <option value="5 Ton Rollback">5 Ton Rollback Body</option>
                         <option value="10 Cube Tipper">10 Cube Tipper Body</option>
-                        <option value="Heavy Duty Wrecker">Heavy Duty Tow Truck</option>
-                        <option value="Custom Gates/Doors">Custom Driveway Gates / Burglar Doors</option>
-                        <option value="Other Commercial Fitment">Other Custom Steel/Aluminium Work</option>
+                        <option value="Heavy Duty Wrecker">Heavy Duty Tow Truck Fitment</option>
+                        <option value="Custom Driveway Gate">Custom Driveway Gate / Motorized Gate</option>
+                        <option value="Burglar Proofing">Burglar Proofing / Steel Doors</option>
+                        <option value="Other Custom Fabrication">Other Custom Steel / Aluminium Fabrication</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="details">Chassis / Site Specifications</label>
-                    <textarea id="details" name="details" rows="4" placeholder="Provide vehicle model/year or property scope details..."></textarea>
+                    <textarea id="details" name="details" rows="4" placeholder="Provide chassis details (e.g., Isuzu 8-ton, Hino, Mercedes) or property gate measurements..."></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Submit Quote Request</button>
+                <button type="submit" class="submit-btn">Submit Specification Form</button>
             </form>
-        </section>
+        </div>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 Titan Commercial Engineering. All Rights Reserved.</p>
+        <p>&copy; 2026 Peter's Heavy Commercial Truck Bodies & Custom Fabrications. All Rights Reserved.</p>
     </footer>
 
 </body>
