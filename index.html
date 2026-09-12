@@ -1,10 +1,301 @@
-<!-- Top Bar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monsieur Pierre Fabrication Group | Commercial Truck Bodies & Custom Steel</title>
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --secondary-dark: #1e293b;
+            --accent-gold: #d97706;
+            --accent-green: #25d366;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background-color: #020617;
+            color: var(--text-sub);
+            padding: 0.6rem 2rem;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        header {
+            background-color: var(--secondary-dark);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-logo {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: var(--accent-gold);
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 1.8px;
+            font-weight: 600;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .wa-btn {
+            background-color: var(--accent-green);
+            color: #ffffff;
+            padding: 0.65rem 1.25rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .wa-btn:hover {
+            opacity: 0.9;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.96)), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-sub);
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: #ffffff;
+            padding: 0.85rem 1.75rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            display: inline-block;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--secondary-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-price {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 1rem 0;
+        }
+
+        .card-desc {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-container {
+            background-color: var(--secondary-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--primary-dark);
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.85rem;
+            background-color: var(--accent-gold);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            background-color: #020617;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-sub);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
     <div class="top-bar">
         <div>📍 Serving South Africa | Precision Commercial & Architectural Engineering</div>
         <div>📞 Direct Inquiries & Quotes: +27 65 078 0192</div>
     </div>
 
-    <!-- Header Navigation -->
     <header>
         <div class="brand-container">
             <img src="logo.png" alt="Monsieur Pierre Fabrication Group Logo" class="brand-logo" onerror="this.style.display='none'">
@@ -19,3 +310,147 @@
             </a>
         </div>
     </header>
+
+    <section class="hero">
+        <h1>Precision Commercial Truck Bodies & Custom Steel Fabrications</h1>
+        <p>Engineered rollbacks, tipper bodies, heavy wreckers, and modern architectural steel solutions built to exact chassis and property specifications.</p>
+        <div class="cta-group">
+            <a href="#catalog" class="btn-primary">View Equipment Catalog</a>
+            <a href="https://wa.me/27650780192?text=Hi%20Monsieur%20Pierre%20Group,%20I'm%20looking%20for%20an%20instant%20quote%20on%20a%20custom%20build." target="_blank" class="wa-btn">Instant WhatsApp Quote</a>
+        </div>
+    </section>
+
+    <main class="container" id="catalog">
+        
+        <div class="section-header">
+            <h2>Heavy Commercial Truck Bodies</h2>
+            <p>Engineered to chassis specifications using heavy-gauge industrial standards.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">16 Ton Rollback Body</h3>
+                        <p class="card-desc">Severe-duty hydraulic rollback platform designed for plant machinery transport and heavy breakdown recovery.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">R 295,000.00 <span style="font-size:0.75rem; color:var(--text-sub);">excl. VAT</span></div>
+                        <a href="https://wa.me/27650780192?text=Hi%20Monsieur%20Pierre%20Group,%20I%20need%20a%20quote%20for%20a%2016%20Ton%20Rollback%20Body." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">5 Ton Rollback Body</h3>
+                        <p class="card-desc">Precision-engineered rollback carrier deck for vehicle towing, breakdown fleets, and light machinery transport.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">R 195,000.00 <span style="font-size:0.75rem; color:var(--text-sub);">excl. VAT</span></div>
+                        <a href="https://wa.me/27650780192?text=Hi%20Monsieur%20Pierre%20Group,%20I%20need%20a%20quote%20for%20a%205%20Ton%20Rollback%20Body." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">10 Cube Tipper Body</h3>
+                        <p class="card-desc">High-tensile reinforced steel tipping body built for aggregate, earthmoving, civil, and mining contractors.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">R 195,000.00 <span style="font-size:0.75rem; color:var(--text-sub);">excl. VAT</span></div>
+                        <a href="https://wa.me/27650780192?text=Hi%20Monsieur%20Pierre%20Group,%20I%20need%20a%20quote%20for%20a%2010%20Cube%20Tipper%20Body." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Heavy Duty Wrecker / Tow Truck</h3>
+                        <p class="card-desc">Custom heavy wrecker fitment engineered for severe vehicle extraction and heavy-duty towing operations.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">R 850,000.00 <span style="font-size:0.75rem; color:var(--text-sub);">excl. VAT</span></div>
+                        <a href="https://wa.me/27650780192?text=Hi%20Monsieur%20Pierre%20Group,%20I%20need%20a%20quote%20for%20a%20Heavy%20Duty%20Wrecker." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>Architectural Steel & Perimeter Security</h2>
+            <p>Bespoke automated driveway gates, modern burglar proofing, and structural steel fabrications.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Custom Slatted & Laser-Cut Driveway Gates</h3>
+                        <p class="card-desc">Modern automated security gates custom built for residential estates, commercial hubs, and industrial premises.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">Custom Quote</div>
+                        <a href="https://wa.me/27650780192?text=Hi%20Monsieur%20Pierre%20Group,%20I%20would%20like%20a%20quote%20for%20a%20Custom%20Driveway%20Gate." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">High-Security Burglar Proofing & Enclosures</h3>
+                        <p class="card-desc">Architectural burglar bars, steel security doors, pedestrian access gates, and custom balustrades.</p>
+                    </div>
+                    <div>
+                        <div class="card-price">Custom Quote</div>
+                        <a href="https://wa.me/27650780192?text=Hi%20Monsieur%20Pierre%20Group,%20I%20would%20like%20a%20quote%20for%20Burglar%20Proofing/Steel%20Doors." class="wa-btn" style="justify-content: center;">Inquire via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-container" id="quote">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;">Request a Formal Quote</h2>
+            <p style="text-align: center; color: var(--text-sub); margin-bottom: 2rem;">Fill out your details below and our team will get back to you with build specs and pricing.</p>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Company / Contact Name</label>
+                    <input type="text" id="name" name="name" required placeholder="e.g. John Smith (ABC Transport)">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone / WhatsApp Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="065 078 0192">
+                </div>
+                <div class="form-group">
+                    <label for="service">Required Build or Fitting</label>
+                    <select id="service" name="service">
+                        <option value="16 Ton Rollback">16 Ton Rollback Body</option>
+                        <option value="5 Ton Rollback">5 Ton Rollback Body</option>
+                        <option value="10 Cube Tipper">10 Cube Tipper Body</option>
+                        <option value="Heavy Duty Wrecker">Heavy Duty Tow Truck Fitment</option>
+                        <option value="Custom Driveway Gate">Custom Driveway Gate / Motorized Gate</option>
+                        <option value="Burglar Proofing">Burglar Proofing / Steel Doors</option>
+                        <option value="Other Custom Fabrication">Other Custom Steel / Aluminium Fabrication</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="details">Chassis / Property Specifications</label>
+                    <textarea id="details" name="details" rows="4" placeholder="Provide chassis details (e.g., Isuzu 8-ton, Hino, Mercedes) or property gate measurements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Specification Form</button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Monsieur Pierre Fabrication Group. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
